@@ -1,0 +1,52 @@
+/* 타입 */
+
+
+/* class */
+.s-cls01{
+    background-color: black;
+    color: white;
+}
+
+/* 자식 */
+/* div밑에 있으면 적용 안되는 것을 볼 수 있다 */
+#atc > p {
+    color : yellowgreen;    
+}
+
+/* 인접 */
+b + span + pre{
+    background-color: plum;
+}
+
+/* 속성 */
+/* 여러 개 해보기 */
+[class]{
+    background-color: gray;
+}
+
+p[title="b"]{
+    color: red;
+}
+
+/* 가상 클래스 */
+a:link{
+    color: green;
+    font-size: 20px;
+}
+a:visited{
+    color: hotpink;
+}
+/* 마우스 올려놨을때 색 바뀜 */
+a:hover{
+    background-color: darkmagenta;
+    color: yellowgreen;
+}
+/* 클릭하는 순간 */
+a:active{
+    background-color: black;
+    color: yellow;
+}
+input:checked{
+    width: 100px;
+    height: 100px;
+}

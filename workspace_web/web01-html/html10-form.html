@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        from 태그는 name속성이 action="html-form-res.html"으로 전달된다
+        value 지정하지 않으면 입력받은 값이 된다 (input의 경우)
+    -->
+    <!-- <form action="html-form-res.html" method="get">-->
+    <form action="html-form-res.html" method="get">
+        <!--전체 frame-->
+        <fieldset>
+            <!--전체 frame의 제목-->
+            <legend>회원가입</legend>
+
+            <!--type="text"는 전부 쓰여짐-->
+
+            <p>ID : <input type="text" name="id"></p>
+            <!--type="password"는 ast로 바뀐다-->
+            <p>PW : <input type="password" name="pw"></p>
+
+            <p>
+                email 수신 여부<br>
+                <!--name 을 같게 하면 하나만 선택되도록 할 수 있다-->
+                <input type="radio" name="rdo" value="y">Yes <br>
+                <input type="radio" name="rdo" value="n">NO
+            </p>
+
+            <p>
+                관심분야<br>
+                <!--type="checkbox"은 여러 개 선택할 수 있다 -->
+                <input type="checkbox" name="python" value="python">PYTHON <br>
+                <input type="checkbox" name="web" value="web">WEB <br>
+                <input type="checkbox" name="database" value="database">DATABASE <br>
+            </p>
+
+            <p>
+                하고싶은 말 <br>
+                <!-- -->
+                <textarea name="etc" cols="30" rows="10"></textarea>
+            </p>
+            
+            <p>
+                <!-- 나중에 처리해서 event 발생 가능 -->    
+                <input type="button" value="그냥 버튼">
+                <input type="reset" value="리셋 버튼">
+                <input type="submit" value="전송 버튼">
+            </p>
+                <!-- query string : 같이 전달된 데이터 -->   
+        </fieldset>
+
+        
+    </form>
+
+
+
+</body>
+</html>

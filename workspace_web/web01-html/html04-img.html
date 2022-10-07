@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>이미지</h1>
+    <!--&lt; &gt; -> letter than grater than-->
+    <h2>&lt;img&gt; 속성들</h2>
+    <!--alt : alternative 대신 보여주는 문자-->
+    <img src="./images/img.png" alt="대체할 내용" width="400px" height="400px">
+    <!--
+        pt = point (1pt = 0.7inch)
+        px = pixel (해상도 별 상대크기)
+        %, em : 지정 상속 등에 대한 백분율(상대크기)
+        
+    -->
+
+    <h2>이미지에 링크 걸기</h2>
+    <a href="index.html">
+        <img src="./images/img.png" alt="icon" width="100px" height="100px">        
+    </a>
+
+    <h2>이미지 맵 : 이미지 특정 부분에 링크 걸기</h2>
+    <img src="./images/img.png" alt="icon" width="200px" height="100px" usemap="#my">
+    <map name="my">
+        <!-- rectangle circle 등 으로 구간 정함-->
+        <area shape="rect" coords="75,25,125,75" href="index.html" alt="go index">
+    </map>
+
+
+</body>
+</html>

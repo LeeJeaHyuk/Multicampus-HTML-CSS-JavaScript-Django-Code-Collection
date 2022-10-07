@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 태그 여러 개 선택 */
+        dl, dt, dd, p{
+            /* 엘리먼트와 엘리먼트 사이의 간격을 지정 */
+            margin: 0px;
+            /* 엘리먼트의 상 하 좌 우 여백을 한꺼번에 지정 */
+            padding: 0%;
+        }
+
+        /* #red(00~ff)green()blue() */
+        .box{
+            width: 600px;
+            border: 3px #123456 double;
+
+        }
+        dt{
+            background: #abcdef;
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 15px;
+            padding: 15px;
+            border-bottom: #123456 5px double;
+        }
+        dd{
+            padding: 10px;
+        }
+        .line{
+            /* 박스의 하단 테두리 지정 */
+            border-bottom: #123456 1px dotted;
+        }   
+
+    </style>
+</head>
+
+<body>
+    <dl class="box">
+        <dt>드래곤 라자 명언</dt>
+        <dd class="line">
+            <h2>샌슨 네드발</h2>
+            <p>저와 말이 함께 후치를 타면 됩니다</p>
+        </dd>
+        <dd>
+            <h2>핸드레이크</h2>
+            <p>나는 단수가 아니다</p>
+        </dd>
+    </dl>    
+</body>
+</html>

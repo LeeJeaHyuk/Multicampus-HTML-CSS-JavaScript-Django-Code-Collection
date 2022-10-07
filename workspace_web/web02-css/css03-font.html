@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        /* div 밑에 있는 자식 요소 h1을 찾아라 */
+        div > h1 {
+            font-weight: bold;
+            font-style: italic;
+            font-variant: small-caps;
+
+            font-size: 25px;
+            line-height: 500px;
+
+            font-family: "궁서";
+        }
+
+        /* font 등록 */
+        @font-face{
+            font-family: "Goyang";
+        /* .(현재 폴더라는 의미)/fonts(현재 폴더에서 fonts폴더이동)/cat_ttf(cat_ttf로 이동)/Goyang.ttf(파일지정)  */
+            src : url("./fonts/cat_ttf/Goyang.ttf") format("truetype");
+        }
+        /* div만 하면 지정 안됨 */
+        /* div+를 하는 이유? */
+        div + h1 {
+            font-family: "Goyang";
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>Data Science / Data Engineering 과정</h1>
+    </div>
+    
+    <h1>Data Science / Data Engineering 과정</h1>
+
+    <div>
+        <strong>Data</strong>
+    </div>
+</body>
+</html>

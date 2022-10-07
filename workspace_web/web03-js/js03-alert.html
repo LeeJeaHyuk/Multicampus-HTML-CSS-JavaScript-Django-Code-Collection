@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function alertTest(){
+            alert("내용 출력 (단순 대화창)")
+        }
+
+        function confirmTest(){
+            var result = confirm("배경을 파란색으로 변환하시겠습니까?")
+            if(result){
+                alert("파란색으로 변환합니다");
+                // 현재 문서.body태그.style지정.배경색지정
+                document.body.style.backgroundColor = "blue";
+            } else{
+                alert("배경색을 없앱니다")
+                document.body.style.backgroundColor = "";
+            }
+        }
+
+        function promptTest(){
+            var txt = prompt("좋아하는 과목을 선택해 주세요 \n[1:python 2:database 3:web] ");
+            // 확인 : 텍스트박스에 작성한 내용 / 취소 : null
+            if (txt ==1){
+                alert("python" );
+            } else if (txt ==2){
+                alert ("database oracle");
+            } else if (txt ==3){
+                alert ("web");
+            } else if (txt ==null){
+                alert ("취소");
+            } else {
+                alert ("1,2,3중에 하나만 선택");
+            }
+
+        }
+    </script>
+
+</head>
+<body>
+    <!-- 함수 = 독립적 메서드 = 종속적 -->
+    <h1>Window 객체의 대화창 메서드</h1>
+
+    <p>
+        alert() : 경고창
+        <button onclick="alertTest()";>확인</button>
+    </p>
+
+    <p>
+        confrim() :확인 / 취소 버튼
+        <button onclick="confirmTest()";>확인</button>
+    </p>
+
+    <p>
+        prompt() : 텍스트박스 + 확인 / 취소 버튼
+        <button onclick="promptTest()";>확인</button>
+    </p>
+
+
+</body>
+</html>

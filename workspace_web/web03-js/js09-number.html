@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #circle{
+            border: 1px solid red;
+            display: none;
+        }
+    </style>
+
+    <script>
+        function numberObj(){
+            //literal
+            var num01 =3;
+            // object
+            var num02 = new Number(3);
+
+            console.log(num01 + " : " + typeof(num01));
+            console.log(num02 + " : " + typeof(num02));
+
+            // // string -> number
+            // alert(parseInt("1")+1);
+            // // NaN : Not a Number 숫자가 아닌
+            // alert(parseInt("a"));
+
+            //is~~ 같다
+            //has~~ 가지고 있다 둘 다 boolean값을 리턴한다
+            var num = prompt("숫자만 입력해 주세요!")
+            if (isNaN(num)){
+                alert("숫자가 아님")
+            } else{
+                alert("숫자이다")
+            }
+        }
+
+        function randomNum(){
+            // Math.random() : 0 <= x < 1
+            // Math.floor() : 버림 
+            // Math.round() : 반올림
+            // Math.ceil() : 올림
+
+            var min = 10;
+            var max = 100;
+            // Math.random()은 0~1사이의 값 * 90 : 0<x<90
+            // 0<x<90 +10 => 10<x<100
+            var ran = Math.round(Math.random() * (max-min)+ min);
+            console.log(ran)
+        }
+
+        function randomBG(){
+            var rnum = function(){
+                return Math.floor(Math.random()*256);
+            }
+            // rgb값을 클릭할때마다 랜덤으로
+            document.body.style.backgroundColor="rgb("+rnum()+","+rnum()+","+rnum()+")";
+        }
+
+        function randomCircle(){
+            this.rnum = Math.floor(Math.random()*200);
+            var circle = document.getElementById("circle");
+
+            circle.style.display= "block";
+
+            circle.style.width = rnum + "px";
+            circle.style.height = rnum + "px";
+
+            circle.style.borderRadius = Math.floor(rnum/2)+"px";
+        }
+
+    </script>
+
+</head>
+<body>
+    
+    <h1>숫자</h1>
+    
+    <button onclick="numberObj();">숫자</button>
+    <br>
+    <button onclick="randomNum();">난수</button>
+    <br>
+    <button onclick="randomBG();">랜덤 배경색</button>
+    <br>
+    <button onclick="randomCircle();">랜덤 원 그리기</button>
+    <br>
+    <button onclick="circleArea();">원의 넓이/둘래</button>
+    <br>
+    반지름 : <span id="r"></span>
+    <br>
+    원의 넓이 : <span id="area"></span>
+    <br>
+    원의 둘래 : <span id="len"></span>
+    <br>
+    <small>(소수 첫째자리 반올림)</small>
+    <br><br><br>
+    <button onclick="circleArea2();">원의 넓이/둘래2</button>
+    <br>
+    원의 넓이 2: <span id="area2"></span>
+    <br>
+    원의 둘래 2: <span id="len2"></span>
+    <br>
+    <div id="circle"></div>
+    
+    <script>
+        function circleArea(){
+         //넓이 pi * r * r
+         //둘래 pi * r * 2
+            console.log(this.rnum);
+            
+            rnumhalf = Math.round(rnum/2);
+            console.log(rnumhalf);
+
+            // 넓이 둘래값 구하기
+            var areaValue = Math.round(Math.PI*rnumhalf*rnumhalf*10)/10;
+            var lenValue = Math.round(Math.PI*rnumhalf*2*10)/10;
+            
+
+            //console로 확인
+            console.log(areaValue);
+            console.log(lenValue);
+
+            var area = document.getElementById("r");
+            area.innerHTML =rnumhalf + "cm"
+            //area 입력
+            var area = document.getElementById("area");
+            area.innerHTML = areaValue + "cm<sup>2</sup>"
+
+            //len 입력
+            var len = document.getElementById("len");
+            len.innerHTML = lenValue + "cm"
+        }
+
+        function circleArea2(){
+            // div 의 widrh 가지고오기
+            // 반지름 구하기
+            // 넓기 구하기
+            // 둘래 구하기
+            // span tag에 값 넣기
+            var r2 = parseInt(document.getElementById("circle").style.width);
+            var r = r2/2
+            console.log("r2 :"+r2);
+            console.log("r :"+r);
+
+            var area2 = Math.PI*r**2; //r**2 가능
+            var len2 = Math.PI * r2;
+
+            document.getElementById("area2").innerHTML=Math.round(area2);
+            document.getElementById("len2").innerHTML=Math.round(len2);
+
+        }
+    </script>
+
+</body>
+</html>

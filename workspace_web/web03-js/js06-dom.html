@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function serchQS(){
+            // var doc = document.querySelector("#test01");
+            // doc.innerHTML = "querySelector(css표현식)";
+            // alert(doc)
+
+            var doc = document.querySelectorAll("#test01") ;
+            // alert(doc)
+            doc[0].innerHTML = "querySelectorAll(css표현식)"
+        }
+
+        function serchId(){
+            var doc = document.getElementById("test01");
+            doc.innerHTML = "id로 탐색";
+            doc.style.color= "red";
+
+        }
+
+        function searchName(){
+            var doc = document.getElementsByName("test02");
+            doc[1].value="name으로 탐색"
+        }
+
+        function serchTagNmae(){
+            var doc = document.getElementsByTagName("p");
+            // alert(doc[3].innerHTML.slice(3,7));
+            doc[3].innerHTML = "TagName으로 탐색";            
+            doc[3].style.color= "blue";
+            
+        }
+    </script>
+
+</head>
+<body>
+    <!-- 
+        문서를 object으로 바꾸기
+        Document Object Model
+
+     -->
+    <p onclick="serchQS();">DOM 탐색 메서드</p>
+
+    <p id="test01" onclick="serchId();">1. 엘리먼트 id로 탐색 : 엘리먼트 하나를 선택 - 반환 : 값 하나</p>
+
+    <p onclick="searchName();">
+        2. 엘리먼트의 name으로 탐색 : 엘리먼트 여러개를 선택 - 반환 : 배열 (nodeList)
+        <br>
+        <input type="text" name="test02"><br>
+        <input type="text" name="test02"><br>
+        <input type="text" name="test02">
+    </p>
+
+    <p onclick="serchTagNmae();">3. 엘리먼트의 tag name으로 탐색 : 엘리먼트 여러개를 선택 - 반환: 배열 (nodeList)</p>
+
+</body>
+</html>

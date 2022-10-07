@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+        var ids=["multi","java","script"];
+        
+        //아이디 중복체크
+        function confirmChk(){
+            var id=document.getElementsByName("id")[0].value;
+            // getElementsByTagName
+            var div=document.getElementsByTagName("div")[0];
+            if(ids.indexOf(id)!=-1){
+                div.innerHTML="<b>아이디가 존재합니다.</b>";
+            }else{
+                var userId="사용할 수 있는 아이디입니다."
+                        +"<input type='button' value='확인'"
+                        +"onclick='insertId(\""+id+"\")'>";
+                        // (\""+id+"\")경로
+                        // 변수를 문자열로 바꾸어줌
+                div.innerHTML=userId;          
+            }
+        }
+        
+        function insertId(id){
+            opener.document.getElementsByName("id")[0].value=id;
+            opener.document.getElementsByName("pwd")[0].focus();
+            close();
+            // self. 생략가능
+        }
+    </script>
+
+</head>
+<body>
+    
+	<table>
+		<tr>
+            <!--
+            (팝업창 내부) 아이디 입력 / 중복확인, 취소 버튼 존재
+            중복확인 버튼 confirmChk함수실행
+            confirmChk : 아이디 중복 확인
+            ids=["multi","java","script"] 가 존재하는데
+            ids.indexOf()에 존재하지 않으면 -1을 반환하므로 -1이면 아이디가 중복이 아니다
+            존재하지 않는 아이디이면 확인버튼을 생성한다
+            버튼을 누르면 insertId 함수실행
+            insertId 함수
+            opener를 통해 입력한 id를 반환하는듯
+            opener.document.getElementsByName("pwd")[0].focus(); 존재 이유?
+
+
+            -->
+			<td>아이디</td>
+			<td><input type="text" name="id"/></td>
+		</tr>
+		<tr>
+			<td colspan="2">  <!-- 중복체크를 눌렀을때 -->
+				<input type="button" value="중복확인" onclick="confirmChk()"/>
+				<input type="button" value="취소" onclick="self.close()"/>
+                <!-- self.close() 현재 문서 종료 -->
+			</td>
+		</tr>
+	</table>
+	<div></div>
+
+</body>
+</html>
