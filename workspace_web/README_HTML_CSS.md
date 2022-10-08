@@ -109,7 +109,9 @@ HTML HyperText Markup Langage
                p[title]{ }
        ```
 
-     -    p[title]{ } 로 선택하면된다
+     - p[title]{ } 로 선택하면된다
+
+   - tag + tag 옆애 있는애 선택
 
    - 가상 클래스
 
