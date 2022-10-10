@@ -22,8 +22,8 @@
    - jsType 함수 
      - string type 변수 inferVal 선언
      - 타입 확인 
-       - 문자 / 숫자 / true / null / function
-       - string / number / boolean / object / 
+       - 문자 / 숫자 / true / null / 객체(Object object )/function
+       - string / number / boolean / object / Object object /function
 
 
 
