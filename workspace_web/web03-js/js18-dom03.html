@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function eleCreate(){
+            var div = document.createElement("div");
+            // <div></div> 안에 들어간다
+
+            /*
+            //1.
+            var attr = document.createAttribute("style");
+            attr.nodeValue = "border: 2px solid blue";
+            // 속성을 만들고 속성 개체에 값을 넣었다
+            // style = "border: 2px solid blue"
+            div.setAttributeNode(attr);
+            // <div style = "border: 2px solid blue"></div>
+            */
+
+            //2.
+            // 객체를 만들지 않고 
+            div.setAttribute("style", "border: 2px solid red")
+
+            var txt = document.createTextNode("엘리먼트 생성");
+            div.appendChild(txt);
+            // 자식요소로 넣어준다
+            // <div style = "border: 2px solid blue">엘리먼트 생성/div>
+
+            document.body.appendChild(div);
+
+
+
+        }
+    </script>
+
+</head>
+<body>
+    
+    <button onclick="eleCreate();">엘리먼트 생성하기</button>
+    
+
+</body>
+</html>

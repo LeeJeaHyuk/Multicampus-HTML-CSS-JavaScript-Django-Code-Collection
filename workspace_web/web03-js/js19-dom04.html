@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img, #imgView{
+            width: 300px;
+            height: 300px;
+
+        }
+    </style>
+
+    <script>
+        function createImg(){
+            // 1. 이름이 rdoBtn 인 요소 가져오기
+            var radios  = document.getElementsByName("rdoBtn");
+            // console.log(radios[0].checked);
+
+            var radioVal ="";
+            // 2. radios의 length만큼 for문 사용
+                            // 3. 각 요소가 체크되어있는지 확인
+                    // 4. 체크되어있으면 자신의 value 속성의 값을 가지고오기
+                    // 경로 문자열 만들어주기
+            
+            for (var i =0; i<radios.length; i++){
+                if (radios[i].checked){
+                    radioVal = "resources/imgs/"+radios[i].value;
+                    // console.log(radioVal)
+                }                
+            }
+
+            // 5. img 태그 생성
+            var img = document.createElement("img");
+            img.setAttribute("src", radioVal);
+
+            // 6. img 태그에 src 속성을 만들어서 
+            // 위에서 저장해둔 경로 문자열 (radioVal) 을 값으로 넣어주자
+
+            // 7. 
+            var div = document.getElementById("imgView");
+            var chd = document.querySelector("#imgView > img");
+            div.replaceChild(img,chd);
+
+
+        }
+
+        function deleteImg(){
+            document.getElementById("imgView").innerHTML = "<img src'''>";
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+    <input type="radio" name="rdoBtn" value="img01.png">img01 <br>
+    <input type="radio" name="rdoBtn" value="img02.png">img02 <br>
+    <input type="radio" name="rdoBtn" value="img03.png">img03 <br>
+
+    <br>
+    <button onclick="createImg();">이미지 생성</button>
+    <button onclick="deleteImg();">이미지 삭제</button>
+
+    <br>
+    <div id="imgView"><img src="" alt=""></div>
+
+</body>
+</html>

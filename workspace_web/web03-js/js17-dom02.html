@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function serchPar(){
+            var child02 = document.getElementsByTagName("p")[1];
+
+            var parent = child02.parentNode;
+            console.log(parent);
+            // nodeName 대문자로 나온다 (DIV)
+            alert(parent.nodeName);
+        }
+
+        function serchChi(){
+            // nodelist로 나온다 : 특정하나를 가져올때는 몇번째인지 특정해주어야 한다
+            var div = document.getElementsByTagName("div")[0];
+
+            var divChildren = div.childNodes;
+            console.log(divChildren);
+            console.log(divChildren[0].nodeName);
+            console.log(divChildren[0].tagName);
+            console.log(divChildren[1].nodeName);
+            console.log(divChildren[1].tagName);
+
+            // childNodes는 textnode도 포함시켜서 가져온다 
+            // p태그사이의 enter도 인식한다
+
+            // divChildren[1].style.backgroundColor = "pink";         
+            
+
+
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>부모탐색, 자식탐색</h1>
+
+    <div>
+        <p>child01</p>
+        <p>child02</p>
+        <p>child03</p>
+    </div>
+
+    <button onclick="serchPar();">부모탐색</button>
+    <button onclick="serchChi();">자식탐색</button>
+
+</body>
+</html>
