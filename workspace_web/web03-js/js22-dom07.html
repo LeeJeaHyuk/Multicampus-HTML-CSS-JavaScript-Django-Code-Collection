@@ -9,10 +9,13 @@
 
     <script>
         function tableVal(){
+            // forms HTMLcollection을 반환
+            //
             var doc = document.forms[0];
             // console.log(doc.id.value)
             var vals = [doc.id.value, doc.pw.value, doc.addr.value, doc.phone.value];
             
+            // 유효성 검사
             for (var i = 0; i < vals.length; i++){
                 console.log(vals[i])
                 // vals에 입력한 값이 들어있다
@@ -45,6 +48,7 @@
 
             var dTd = document.createElement("td");
             dTd.innerHTML = "<input type = 'button' value='삭제' onclick='delRow(this)'>";
+            // setAttribute로도 똑같이 만들 수 있다.
             // console.log(dTd)
             tr.appendChild(dTd);
             // console.log(dTd)
@@ -53,8 +57,9 @@
             // td 생성해서 dtd라고 함
             // 삭제 버튼 생성해서 dtd에 출력되게 함
             // tr에  dTd값 넣기 
-            // tr 리턴 (왜 return 해야지 값이 보일까)
+            // tr 리턴 
             // tr = <tr><td></td>...<td><input type = 'button' value='삭제' onclick='delRow(this)'></td></tr>
+            // document.getElementById("addtr").appendChild(tr) 로 전달된다
         }
 
         function deleteVal(){

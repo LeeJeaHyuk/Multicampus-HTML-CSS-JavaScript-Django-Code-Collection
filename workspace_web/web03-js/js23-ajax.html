@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // ajax : Asynchronous Javascript And Xml
+
+        function ajaxTest(){
+            // 객체 생성
+            // XMLHttpRequest : javascript object, http를 통한 데이터 송수신 지원
+            var xhr = new XMLHttpRequest();
+
+            // callback 요청하면 응답한다
+            // readystate가 바뀔때마다(change) 함수 호출
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState == 4) {
+                    if(xhr.status == 200) {
+                        // alert(xhr.responseText);
+                        // console.log(xhr.responseXML)
+                        
+                        // 응답받은 xml객체를 table에 넣기
+                        var respXML = xhr.responseXML;
+                        var table = document.getElementById("tb");
+
+                        // row를 하나씩 꺼내오기
+                        var rows = respXML.getElementsByTagName("ROW");
+                        // ROW가 들어있는 nodelist를 가져온다
+                        console.log(rows)
+
+                        // nodeName 가져오기
+                        var thead = document.createElement("tr")
+                        for (var i = 0; i<rows[0].children.length; i++){
+                            var th = document.createElement("th");
+                            th.appendChild(document.createTextNode(rows[0].children[i].nodeName))                            
+                            //th사이에 넣는다
+                            thead.appendChild(th); 
+                        }
+
+                        table.appendChild(thead)
+
+                        // textContent 가져오기
+                        for (var i = 0; i<rows.length; i++){
+                            //tr 생성
+                            var tr = document.createElement("tr");
+
+                            for (var j = 0; j<rows[i].children.length; j++){
+                                var td = document.createElement("td");
+                                td.appendChild(document.createTextNode(rows[i].children[j].textContent));
+                                tr.appendChild(td);
+                            }
+
+                            table.appendChild(tr);
+                        }
+
+
+
+                    } else {
+                        alert(xhr.status);
+                    }
+                }
+            }
+            // xhr.readyState == 4 통신이 되었을 때
+            // xhr.status == 200 status도 정상이면 alert(xhr.responseText);
+            // responseText 응답된 데이터 텍스트
+            // 정상이 아니면 status 출력
+
+
+            /*
+                readystate
+                0 : uninitallized - 실행되지 않음
+                1 : loading - 로딩중
+                2 : loaded - 로딩 완료
+                3 : interactive - 통신됨
+                4 : complete - 통신 완료
+
+                status
+                200 : 성공
+                400 : bad request
+                401 : anauthorized
+                403 : forbidden
+                403 : not found
+                500 : internal server error
+            */
+
+            xhr.open("GET", "emplist.xml");
+
+            xhr.send();
+            //get방식으로 emplist.xml를 요청함
+
+        }
+    </script>
+
+</head>
+<body>
+
+    <button onclick="ajaxTest();">ajax</button>
+
+    <table border="1" id="tb">
+
+    </table>
+    
+</body>
+</html>
