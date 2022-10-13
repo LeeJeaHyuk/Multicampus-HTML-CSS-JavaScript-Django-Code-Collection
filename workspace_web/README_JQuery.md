@@ -62,15 +62,26 @@ library,module : 기능을 구현하는 코드(함수) 모음
 
 10. accodian
 
+    1. 메뉴를 만들고 자식인 li를 숨기고 있다가 클릭하면 li가 나오도록
+    2. $(this).next().slideToggle();
+       1. 바로 옆의 태그를 가져올때 next() 사용
+          1. slideToggle로 숨겨진 li태그 보이도록 한다
+
+       2. $(this).parent().siblings().find("ul").slideUp();
+          1. // b태그/ 부모의 / 형제 / ul찾는다 / slideUp한다
+
 11. class 
 
-    1. 클래스를 on/off해서 css를 변화시키키
+    1. 클래스를 on/off해서 css를 변화시키기
+    2. hasClass를 통해 클래스가 존재하는지 확인
+    3. removeClass를 통해 클래스 지우기
+    4. addClass를 통해 클래스 만들기
 
 12. insert 내부 추가
 
     1. //$("<p>") 는 document.createElement(p)과 동일
     2. prepend / append
-       1. $("div").prepend($("<p>").addClass("prepend").text("prepend")); 자식요소중 가장 처
+       1. $("div").prepend($("<p>").addClass("prepend").text("prepend")); 자식요소중 가장 처음
        2. $("div").append($("<p>").addClass("append").text("append")); 자식요소 중 가장 마지막
     3. html / text
        1. $("div").html("<b>html요소를 변경</b>") 두껍게 처리됨(innerHTML) 태그가 사용됨
@@ -79,15 +90,27 @@ library,module : 기능을 구현하는 코드(함수) 모음
 13. insert 외부 추가
 
     1. [after](https://api.jquery.com/after/#after-content-content) / insertAfter
-       1. afer **Description:** *Insert content, specified by the parameter, after each element in the set of matched elements.*
+       1. 위치 
+          1.  $("#base").after("<div>새로운 엘리먼트(after)</div>");
+          2. #base 기준 #base 뒤  자식 요소 중 가장 앞쪽에 배치된다 
+       2. afer **Description:** *Insert content, specified by the parameter, after each element in the set of matched elements.*
           1. .after( content [, content ] )
           2. Type: htmlString or Element or Text or Array or jQuery
           3. .after( function )
-       2. insertAfter  
+       3. insertAfter  
           1. taget :  Type: Selector or htmlString or Element or Array or jQuery
           2. 타겟이 앞에 있는지 뒤에 있는지의 차이
+    2. before / insertbefore
+       1. 위치
+          1. $("#base").before("<div>새로운 엘리먼트(before)</div>");
+          2. #base 기준 앞  자식 요소 중 가장 뒤에 배치된다
 
 14. replace
+
+    1. replaceWith 과 replaceAll는 같은 역할을 한다
+    2. $("p").replaceWith("<p><b>replaceWith</b></p>");
+    3. $("<p><b>replaceAll</b></p>").replaceAll("p");
+    4.  p태그를 replaceWith로 교체
 
 15. slotmachine
 
