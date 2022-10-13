@@ -91,7 +91,21 @@ library,module : 기능을 구현하는 코드(함수) 모음
 
 15. slotmachine
 
-    1. setInterval 타이머를 사용하는 내장 함수
+    1. 기본원리
+       1. 클래스를 만들고 클래스의 첫번째 요소를 div에 마지막에 insert한다 
+          1. $(".active").first().appendTo(div);
+
+       2. 원래 문서에 있었던 요소를 다시 삽입하면 이동하기 때문에 반복해주면 계속해서 바뀐다
+       3. toggleClass를 사용해서 클래스를 생성하고 지우기를 반복한다
+       4. 이 때 setInterval를 사용해서 계속해서 생성하고 지우도록 된다
+       5. 버튼은 처음에 start라고 쓰여 있다
+       6. 버튼을 누르면 start가 stop으로 바뀐다
+       7. stop 버튼을 누르면 현재 위치eq(2)에 이미지의 alt값을 alert하고 버튼을 다시 start로 바꾼다
+
+    2. setInterval : 일정 시간동안 함수를 반복시키는 함수
+    3. .first() : 첫번째 요소
+    4. .appendTo(div); : 자식 요소 가장 마지막에 insert한다
+    5. toggleClass("active"); : 버튼을 누를때마다 active클래스를 지우거나 만든다
 
 16. menu
 
@@ -103,13 +117,49 @@ library,module : 기능을 구현하는 코드(함수) 모음
     6. $("a").wrapAll("<b></b>");
        1. b태그안에 a태그를 전부 넣는다
 
-17. ajax01
+17. delete 삭제 : 엘리먼트 제거하기
+
+    1. remove : 선택된 객체가 지워진다
+    2. detach : 복사 붙혀넣기
+       1. .append(detach 변수)하면 없어지고 바뀐다
+
+    3. empty : 선택된 객체의 자식이 지워진다
+
+18. ajax01
 
     1. 언제
+
        1. 비동기통신 클라이언트가 서버에 요청했을 때 
        2. 특정 데이터 부분만 바꾸고 싶을 때
 
-18. ajax02
+    2. $.ajax()
+
+       1. url: "emplist.xml",     // 요청할 주소
+
+       2. method: "get",          // 요청 방식
+
+       3. data : {"key":"value"}    // 요청하면서 함께 보내는 데이터(보낼 데이터가 있다면)
+
+       4. dataType: "xml",         // 응답받는 데이터 타입
+
+       5. success: function(data){ }    // 비동기 통신이 성공했을 때
+
+       6. error: function(request, error){ // 비동기 통신이 실패했을 때
+
+       7. ```
+          // 전체에서EMPLOYEE_ID를 찾아서 (empid:입력값)를 가지고 있다면 그 부모를 선택
+          if((empInfo).is("ROW")){
+          	$("table input").each(function(i){
+          		$(this).val($(empInfo).children().eq(i).text());
+          	})
+          } else {
+          	alert("검색대상이 존재하지 않음")
+          }
+          ```
+
+       8. 
+
+19. ajax02
 
     1. 사원 전체 데이터 가져오기
     2. 비동기통신을 성공했을 때 가져오는 데이터(empRowList)를 makeTable 함수에 전달한다
