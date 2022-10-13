@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        img{
+            width: 150px;
+            height: 150px;
+            float: left;
+        }
+        #menubox{
+            position: relative;
+        }
+        #menu{
+            overflow: auto;
+        }
+        .sel{
+            width: 150px;
+            height: 140px;
+            border: 5px dotted red;
+            position: absolute;
+            left: 300px;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            margin-left: 300px;
+        }
+    </style>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(function(){
+            // setInterval 일정 시간동안 함수를 반복시키는 함수
+            setInterval(function(){
+                var div = $("#menu");
+                $(".active").first().appendTo(div);
+
+                console.log($("img:eq(2)").attr("alt"));                
+                // active클래스의 첫번째에 div의 마지막으로
+                    // div 는 이미지 5개가 들어가있는 메뉴
+                    // appendTo는 자식 요소 가장 마지막에 insert한다
+                    // 원래 문서에 있었던 요소를 삽입하면 이동된다
+            },300);
+
+            $("button").click(function(){
+                $("img").toggleClass("active");
+                // 버튼을 누를때마다 active클래스를 지우거나 만든다
+                
+                
+                if($("button").text()=="start"){
+                    $("button").text("stop");
+                //버튼 이미지 변경 및 멈춘 위치의 이미지 이름 출력
+                //button의 text가 start이면 stop으로 바꾼다
+                } else{
+                    $("button").text("start");
+                    alert($("img:eq(2)").attr("alt"));
+                //button의 text가 stop이면 start로 바꾼다
+                // img:eq(2) : 세 번째 그림의 alt속성을 출력한다 
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    
+    <h1>Slotmachine</h1>
+
+    <div id="menubox">
+        <div class="sel"></div>
+        <div id="menu">
+            <img src="./resources/imgs/img01.png" alt="img01">
+            <img src="./resources/imgs/img02.png" alt="img02">
+            <img src="./resources/imgs/img03.png" alt="img03">
+            <img src="./resources/imgs/img04.png" alt="img04">
+            <img src="./resources/imgs/img05.png" alt="img05">                        
+        </div>
+        <button>start</button>
+    </div>
+
+</body>
+</html>

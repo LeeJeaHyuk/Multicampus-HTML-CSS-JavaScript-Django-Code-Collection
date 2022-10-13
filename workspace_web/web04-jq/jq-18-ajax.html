@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0px; padding: 0px;}
+        table{width: 400px;}
+        table tr:nth-child(odd){background-color: orange;}
+        fieldset{width: 400px;}
+        body{width: 1000px; margin: 50px auto;}
+    </style>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#emp_search").click(function(){
+                var empid = $("input[name=empid]").val();
+                
+                // 입력받은 empid 유효성 검사
+                if(!isNaN(empid) && empid >= 100 && empid <=206){
+                    
+                    // jq 비동기통신
+                    $.ajax({
+                        url: "emplist.xml",             // 요청할 주소
+                        method: "get",                  // 요청 방식
+                        // data : {"key":"value"}       // 요청하면서 함께 보내는 데이터(보낼 데이터가 있다면)
+                        dataType: "xml",                // 응답받는 데이터 타입
+                        success: function(data){        // 비동기 통신이 성공했을 때
+                            var empInfo = $(data).find("EMPLOYEE_ID:contains("+empid+")").parent();
+                            // 전체에서EMPLOYEE_ID를 찾아서 (empid:입력값)를 가지고 있다면 그 부모를 선택
+
+                            if((empInfo).is("ROW")){
+                                $("table input").each(function(i){
+                                    $(this).val($(empInfo).children().eq(i).text());
+                                })
+                            } else {
+                                alert("검색대상이 존재하지 않음")
+                            }
+
+                        },
+                        error: function(request, error){ // 비동기 통신이 실패했을 때
+                            alert("code: " + request.status + "\n"+
+                                 "message : " +request.responseText + "\n" +
+                                 "error : " + error );
+                        }
+                    });
+
+                }else{
+                    alert("사원번호를 100이상 206이하 값으로 입력");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <h1>데이터 가져오기</h1>
+
+    <fieldset>
+        <legend>사원정보 조회</legend>
+        <!-- empid에 검색하고 싶은 값 입력 -->
+        <input type="text" name="empid">        
+        <input type="button" value="조회" id="emp_search">
+    </fieldset>
+
+    <table>
+        <tr>
+            <th>사원번호</th>
+            <td><input type="text" name="empName"></td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td><input type="text" name="lastName"></td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <th>전화번호</th>
+            <td><input type="text" name="phone"></td>
+        </tr>
+        <tr>
+            <th>입사일</th>
+            <td><input type="text" name="hire"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>

@@ -60,10 +60,14 @@ library,module : 기능을 구현하는 코드(함수) 모음
 
       1.  $("body").on("click","p",function(){alert("new p!")});
 
+10. accodian
 
-10. class 
+11. class 
+
     1. 클래스를 on/off해서 css를 변화시키키
-11. insert 내부 추가
+
+12. insert 내부 추가
+
     1. //$("<p>") 는 document.createElement(p)과 동일
     2. prepend / append
        1. $("div").prepend($("<p>").addClass("prepend").text("prepend")); 자식요소중 가장 처
@@ -71,7 +75,9 @@ library,module : 기능을 구현하는 코드(함수) 모음
     3. html / text
        1. $("div").html("<b>html요소를 변경</b>") 두껍게 처리됨(innerHTML) 태그가 사용됨
        2. $("div").text("<b>text요소를 변경</b>") 문자열로 b가 들어간다(textContent)
-12. insert 외부 추가
+
+13. insert 외부 추가
+
     1. [after](https://api.jquery.com/after/#after-content-content) / insertAfter
        1. afer **Description:** *Insert content, specified by the parameter, after each element in the set of matched elements.*
           1. .after( content [, content ] )
@@ -80,6 +86,33 @@ library,module : 기능을 구현하는 코드(함수) 모음
        2. insertAfter  
           1. taget :  Type: Selector or htmlString or Element or Array or jQuery
           2. 타겟이 앞에 있는지 뒤에 있는지의 차이
+
+14. replace
+
+15. slotmachine
+
+    1. setInterval 타이머를 사용하는 내장 함수
+
+16. menu
+
+    1. 클래스를 만들어서 div로 감싸기
+    2. ![image-20221013152452001](../../images/README_JQuery/image-20221013152452001.png)
+    3. 다른 곳을 클릭했을 때는 부모의 box클래스가 없는지를 확인해서 unwrap한다
+    4. 전부 upwrap되면 기존 클릭했던 메뉴가 wrap된다
+    5. wrapInner을 사용하면 안쪽으로 들어간다
+    6. $("a").wrapAll("<b></b>");
+       1. b태그안에 a태그를 전부 넣는다
+
+17. ajax
+
+    1. 언제
+       1. 비동기통신 클라이언트가 서버에 요청했을 때 
+       2. 특정 데이터 부분만 바꾸고 싶을 때
+
+    2. 
+
+
+
 
 
 
