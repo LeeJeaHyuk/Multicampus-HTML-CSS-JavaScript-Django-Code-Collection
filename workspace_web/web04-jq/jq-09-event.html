@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 200px;
+            border: 2px solid red;
+            padding: 20px;
+            overflow: auto;
+        }
+        div p:first-child{
+            float: left;
+            border: 1px solid blue;
+            width: 150px;
+            height: 150px;            
+            text-align: center;            
+            line-height: 150px;
+        }
+        div p:last-child{
+            float: right;
+            border: 1px solid blue;
+            width: 150px;
+            height: 150px;            
+            text-align: center;            
+            line-height: 150px;
+        }
+    </style>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(function(){
+            $("a:eq(0)").click(function(e){
+               alert("a click!")
+            //    e.stopPropagation();            
+            //    e.preventDefault();  //a를 통한 이동이 막힘                
+            });
+
+            $("p").click(function(e){
+                alert("p click!");
+            //    e.stopPropagation();            
+            //    e.preventDefault();
+            });
+
+            $("div").click(function(e){
+                alert("div click!")
+            //    e.stopPropagation();            
+            //    e.preventDefault();
+            });
+/*
+            $("a:eq(1)").bind("mouseover mouseout", function(e){
+                    if (e.type == "mouseover"){
+                        $(this).css("background-color", "skyblue");
+                    }
+                    if (e.type=="mouseout"){
+                        $(this).css("background-color","")
+                    }
+                });
+*/
+    
+            $("a:eq(1)").bind({
+                "mouseover":function(){
+                    $(this).css("background-color", "yellow");
+                },
+                "mouseout": function(){
+                    $(this).css("background-color","")
+                }
+            });
+
+            document.getElementsByTagName("span")[0].addEventListener("click",function(){
+                alert("span click!")
+                $("a:eq(1)").unbind();
+            });
+
+            $("button").click(function(){
+                $("body").append("<p>새로 추가된p</p>");
+            })
+
+            //on : 이벤트를 엮어줌
+            $("p").on("click",function(){
+                alert("p!")
+            });
+            // body에 click을 연결할건데 p를 찾아서 연결
+            $("body").on("click","p",function(){
+                alert("new p!")
+            });
+            
+        });
+
+        /*
+            이벤트 전파 : 각 요소가 서포 포함관계(중첩)인 경우, 요소 중 하나에 이벤트가 발생되면 
+                         중첩된 요소들도 이벤트가 전파된다
+            이벤트 전파 막기
+                - stopPropagation() : 이벤트 요소의 전파 막기
+                - preventDefalt() : 이벤트에 의한 기본 동작 막기                
+                - return false : 둘 다 막기
+
+        */
+
+    </script>
+
+</head>
+<body>
+    
+    <span>unbind() : 이벤트 해제</span>
+
+    <div>
+        <p>
+            <a href="https://www.google.com">클릭!</a>
+        </p>
+        <p>클릭</p>
+    </div>
+
+    <div>
+        <p>
+            <a href="https://github.com/LeeJeaHyuk">클릭!</a>
+        </p>
+        <p>클릭</p>
+    </div>
+
+    <button>요소 추가</button>
+
+</body>
+</html>

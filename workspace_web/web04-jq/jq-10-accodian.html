@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .main_menu{width: 300px;}
+        .sub_menu1{cursor: pointer;}
+        .sub_menu2{display: none; cursor: default;}        
+    </style>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(function(){
+            $("b").click(function(e){
+                // b 태그 다음에 있는 ul 태그를 찾아서 슬라이드 한다
+                // 바로 옆의 태그 가져올때 next
+                $(this).next().slideToggle();
+                // b 태그의 부모의 형제의 자식요소 중 ul태그를 찾아서 슬라이드 한다
+                // b태그/ 부모의 / 형제 / ul찾는다 / slideUp한다
+                $(this).parent().siblings().find("ul").slideUp();
+
+                // $(this).next().slideToggle().end().parent().siblings().find("ul").slideUp();
+                // 한줄로
+
+            });
+
+
+        });
+    </script>
+
+
+
+
+</head>
+<body>
+    
+    <p>메뉴 만들기</p>
+
+    <ul class="main_menu" type="square">
+        <li class="sub_menu1"><b>(1)css 선택자</b>
+            <ul class="sub_menu2" type="circle">
+                <li>tag 선택</li>
+                <li>id 선택</li>
+                <li>class 선택</li>
+                <li>p c 선택</li>
+                <li>p &gt; c선택</li>
+                <li>:nth-child(n/ odd / even)선택</li>
+                <li>:first-child 선택</li>
+                <li>:last-child 선택</li>
+            </ul>
+        </li>
+        <li class="sub_menu1"><b>(2)속성 선택자</b>
+            <ul class="sub_menu2" type="circle">
+                <li>[attr]</li>
+                <li>[attr=value]</li>
+                <li>[attr!=value]</li>
+            </ul>
+        </li>
+        <li class="sub_menu1"><b>(3)폼 선택자</b>
+            <ul class="sub_menu2" type="circle">
+                <li>input:type</li>
+            </ul>
+        </li>
+        <li class="sub_menu1"><b>(4)사용자 정의 선택자</b>
+            <ul class="sub_menu2" type="circle">
+                <li>:eq(n)</li>
+                <li>:first</li>
+                <li>:last</li>
+                <li>:even</li>
+                <li>:odd</li>
+                <li>:parent</li>
+            </ul>
+        </li>
+    </ul>
+
+
+</body>
+</html>

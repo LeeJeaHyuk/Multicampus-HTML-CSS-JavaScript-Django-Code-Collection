@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+
+        $(function(){
+            $("div > p").eq(0).click(function(){
+                $("p b").eq(0).toggle();
+            });
+
+            $("div > p").eq(1).click(function(){
+                $("p b").slice(1,2).toggle();
+            })
+
+            $("div > p").eq(2).click(function(){
+                // $("p b").first().css("color","red");
+                // $("p b").eq(2).toggle();
+                
+                //end()를 하면 $("p b") 처음 객체로 돌아가서 할 줄로 사용할 수 있다
+                $("p b").first().css("color","blue").end().eq(2).toggle();
+            })
+
+            $("div > p").eq(3).click(function(){
+                $("p b").last().toggle();
+            })
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <!-- dom :document object model -->
+
+    <p>
+        <b>eq() : 선택한 엘리먼트들 중에 인덱스로 검색</b>
+        <br>
+        <b>slice() :  선택한 엘리먼트들 중에 인덱스 길이로 검색</b>
+        <br>
+        <b>first() :  선택한 엘리먼트들 중에 첫번째 요소</b>
+        <br>
+        <b>last() :  선택한 엘리먼트들 중에 마지막 요소</b>
+    </p>
+    
+    <div>
+        <p>1.eq()</p>
+        <p>2.slice()</p>
+        <p>3.first()</p>
+        <p>4.last()</p>
+    </div>
+
+
+</body>
+</html>

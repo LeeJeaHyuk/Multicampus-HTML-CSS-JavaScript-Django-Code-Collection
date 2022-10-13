@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {width: 200px; height: 200px;}
+        .addsize {width: 300px; height: 300px;}
+        .onOffImg {display: none;}
+    </style>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#btn").click(function(){
+                $("img").toggle("onOffImg");
+            })
+            $("img").click(function(){
+                //addsize클래스가 있는지 확인해서 없으면 생성/ 있으면 제거
+                if($(this).hasClass("addsize")){
+                    $(this).removeClass("addsize")
+                }else{
+                    $(this).addClass("addsize")
+                }
+            })
+        })
+    </script>
+    
+</head>
+<body>
+    
+    <button id="btn">class on/off</button>
+    <br>
+    <img src="./resources/imgs/img01.png" alt="img01" title="img01">
+    <img src="./resources/imgs/img02.png" alt="img02" title="img02">
+    <img src="./resources/imgs/img03.png" alt="img03" title="img03">
+
+
+</body>
+</html>

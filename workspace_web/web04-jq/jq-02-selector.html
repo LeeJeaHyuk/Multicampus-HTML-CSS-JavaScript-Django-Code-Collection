@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        // 아래는 모두 같은 것
+        // onload=functoin
+        // $(function(){});
+        $(document).ready(function(){
+            $("div:eq(0)").css({"border": "1px solid red", "width" : "400px", "height":"200px"});
+            $("#view").css({"border": "1px solid red", "width" : "400px", "height":"100px"})
+
+        });
+
+        function a1(){
+            $("span").css("color", "skyblue");
+            $("#view").text('$("span").css("color", "skyblue");');
+        }
+
+        function a2(){
+            $("#t1").css("color", "hotpink");
+            $("#view").text('$("#t1").css("color", "hotpink")');
+        }
+
+        function a3(){
+            $(".t2").css("color", "navy");
+            $("#view").text('$(".t2").css("color", "navy");');
+        }
+
+        function a4(){
+            $("li span").css("color", "orange");
+            $("#view").text('$("li span").css("color", "orange");');
+        }
+
+        function a5(){
+            $("li > span").css("color", "purple");
+            $("#view").text('$("li > span").css("color", "purple");');
+        }
+
+        function a6(){
+            $("li:nth-child(6)").css("background-color", "gray");
+            $("#view").text('$("li:nth-child(6)").css("background-color", "gray");');
+        }
+
+        function a7(){
+            $("li:first-child").css("background-color", "lime");
+            $("#view").text('$("li:first-child").css("background-color", "lime");');
+        }
+        
+        function a8(){
+            $("li:last-child").css("background-color", "lime");
+            $("#view").text('$("li:last-child").css("background-color", "lime");');
+        }
+
+        function cls(){
+            $("*").css({"background-color":"", "color":"black"})
+            $("#view").text("");
+
+            // $("li").css("color", "black").css("background-color","");
+            // $("span").css({"color":"black","background-color":""});
+            // $("#view").text("");
+            
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>css Selector</h1>
+
+    <div>
+        <ul>
+            <li><span>tag로 선택</span></li>
+            <li id="t1">id로 선택</li>
+            <li class="t2">class로 선택</li>
+            <li><span>parent child로 선택</span></li>
+            <li><b><span>parent &gt; child로 선택</span></b></li>
+            <li>:nth-child(n/odd/even)로 선택</li>
+            <li>:first-child로 선택</li>
+            <li>:last-child로 선택</li>
+        </ul>
+    </div>
+
+    <div>
+        <button onclick="a1();">tag선택(span)</button>
+        <button onclick="a2();">id선택(t1)</button>
+        <button onclick="a3();">class선택(t2)</button>
+        <button onclick="a4();">p c 선택</button>
+        <button onclick="a5();">p &gt; c 선택</button>
+        <button onclick="a6();">nth-child 선택</button>
+        <button onclick="a7();">first-child 선택</button>
+        <button onclick="a8();">last-child 선택</button>
+        <br>
+        <button onclick="cls();">reset</button>
+    </div>
+
+
+    <h2>코드내용</h2>
+    <div id="view"></div>
+</body>
+</html>

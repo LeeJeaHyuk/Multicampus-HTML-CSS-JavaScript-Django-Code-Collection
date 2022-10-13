@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        function inputText(){
+            var inputVal = $("input:text").val();
+            // js : .value 로 가져옴
+            // jq : .val() 로 가져옴
+            alert(inputVal);
+
+        }
+
+        function inputRadio(){
+            var inputVal = $("input:radio").val();
+            $("#a").html(inputVal);
+        }
+
+        function inputCheck(){
+            var inputVal = $("input:checkbox").val();
+            $("#a").text(inputVal);
+
+        }
+
+        $(function(){
+            $("select").change(function(){
+                var option = $("select > option:selected");
+                console.log(option.val());
+                alert($("select > option").index(option));
+                // index 출력해서 0,1,2번지 출력
+            })
+        })
+    </script>
+
+</head>
+<body>
+    
+
+    <form action="">
+        <input type="text">
+        <input type="button" value="선택" onclick="inputText();">
+        <br>
+        <input type="radio" value="radio value" onclick="inputRadio();">radio
+        <br>
+        <input type="checkbox" value="checkbox value" onclick="inputCheck();">checkbox
+        <br>
+
+        <div id="a"></div>
+
+        <select>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+        </select>
+
+    </form>
+</body>
+</html>

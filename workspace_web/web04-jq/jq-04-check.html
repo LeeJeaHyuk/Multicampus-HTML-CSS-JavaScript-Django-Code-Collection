@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./resources/js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(function(){
+            // .submit() : form의 submit event가 발생되면 수행됨
+            $("#signal").submit(function(){
+                // 유효성 검사
+                if($(".infobox").val()== null || $(".infobox").val()==""){
+                    // ".error"를 보여주기
+                    $(".error").show();
+                    return false;
+                }
+            });
+
+            //#confirm id 클릭시 func실행
+            $("#confirm").click(function(){
+                // 체크가 바뀌면 다시 계산되도록
+                $("#result").empty();
+
+                // $(this) = confirm
+
+                if($("input[name=chk]:checked").length==0){
+                    // 속성 선택자 name이 chk인 input태그를 찾을건데 checked되어있는것들
+                    alert("하나 이상 체크해 주세요")
+                } else{
+                    var total = 0;
+                    // 체크되어있는 것을 가져옮
+                    $("input[name=chk]:checked").each(function(i){
+                        // var chk = $("input[name=chk]:checked").eq(i);
+
+                        // $(this) = each(function(i) 에서 가져온 하나하나
+                        // 체크되어서 가져온 각각을 가져옮
+                        var chk = $(this);
+                        var book = chk.next().text();
+                        var price = chk.val();
+                        $("#result").append(book+"가격 : "+price + "<br>");
+                        total += parseInt(price);
+                    });
+                    $("#result").append("총" + total + "원");
+                }
+            })
+            
+            /*
+            name이 chk인 input 태그들이 모두 체크되면 
+            name이 all인 input 태그의 checked true로
+            name이 chk인 input 태그들이 하나라도 체크 해제 되면
+            name이 all인 input 태그의 checked false로
+            */
+        
+            $("input[name=chk]").click(function(){
+
+                if ($("input[name=chk]:checked").length == $("input[name=chk]").length){
+                    $("input[name=all]").prop("checked",ture);
+
+                } else{
+                    $("input[name=all]").prop("checked",false);
+                }
+
+            });
+        });
+
+        function allchk(bool){
+            // 이름이 chk인 애들 가져와서 check속성을 allchk와 같게 한다
+            // $("input[name=chk]").each(function(){
+            //     $(this).prop("checked", bool);
+            // })
+
+            $("input[name=chk]").prop("checked",bool);
+            
+        }
+        /*
+        .attr() : html의 attribute
+        .prop() : js(jq)의 propoerty
+        */
+    </script>
+
+</head>
+<body>
+
+    <form action="" method="get" id="signal">
+        <div>
+            <span class="label">User ID</span>
+            <input type="text" class="infobox" name="userid">
+            <span class="error" hidden style="color : red">반드시 입력해 주세요</span>
+        </div>
+        <input type="submit" value="입력" class="submit">
+    </form>
+
+    <hr>
+
+    <fieldset style="width: 300px;">
+        <legend>체크여부 확인</legend>
+
+        <input type="checkbox" name="all" onclick="allchk(this.checked);">전체선택
+        <br>
+        <input type="checkbox" name="chk" value="25000"><b>python</b>
+        <br>
+        <input type="checkbox" name="chk" value="30000"><b>oracle</b>
+        <br>
+        <input type="checkbox" name="chk" value="35000"><b>html/css/javascript</b>
+        <br>
+        <input type="button" value="확인" id="confirm">
+        <br>
+        <span>선택한 책 가격</span>
+        <div id="result"></div>
+    </fieldset>
+
+</body>
+</html>
