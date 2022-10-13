@@ -103,13 +103,26 @@ library,module : 기능을 구현하는 코드(함수) 모음
     6. $("a").wrapAll("<b></b>");
        1. b태그안에 a태그를 전부 넣는다
 
-17. ajax
+17. ajax01
 
     1. 언제
        1. 비동기통신 클라이언트가 서버에 요청했을 때 
        2. 특정 데이터 부분만 바꾸고 싶을 때
 
-    2. 
+18. ajax02
+
+    1. 사원 전체 데이터 가져오기
+    2. 비동기통신을 성공했을 때 가져오는 데이터(empRowList)를 makeTable 함수에 전달한다
+    3. makeTable 함수
+       1. 맨 위 이름 가져오기
+          1. elem.eq(0).children().length은 ROW안의 값들이 몇 개 들어있는지 확인한다
+          2. elem.eq(0).children().eq(j).prop("tagName")은 tagName의 속성값을 가져온다
+          3. 값을 td에 각각 넣고 다시 tr에 넣는다
+
+       2. 값 가져오기
+          1. elem.eq(i).children().length 은 i번째 Row의 자식의 길이를 리턴한다
+          2. elem.eq(i).children().eq(j).text()은 Row 안에 j번째 값을 리턴한다
+          3. 위의 값을 다시 td에 넣고 tr에 전달한후 테이블에 전달 후 리턴
 
 
 

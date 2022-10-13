@@ -28,12 +28,19 @@ function makeTable(elem){
 		for(var j=0; j<elem.eq(i).children().length;j++){
 			//elem.eq(i).children().length = 5 
 			var $td=$("<td>").append(elem.eq(i).children().eq(j).text());
-			console.log(elem.eq(i).children().eq(j).text())
-
 			$tr.append($td);
-		}
+		}		
 		$table.append($tr);
 	}
-	
+	for (var j =0; j<5; j++){
+		console.log(elem.eq(0).children().eq(j).text())
+		/*
+		100
+		King
+		SKING
+		515.123.4567
+		1987. 6. 17 오전 12:00:00
+		*/	
+	}
 	return $table;
 }
