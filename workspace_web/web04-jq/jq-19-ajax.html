@@ -21,10 +21,10 @@
     
         $(function(){
             $("#emp_search").click(function(){
-                
+            // html은 서버에서 만들어진다    
                 $.ajax({
                     url:"emplist.xml",
-                    dataType:"xml",
+                    dataType:"xml",     // 가져올때 문자열을 자동으로  xml로 바꾼다
                     success:function(data){
                         var empRowList=$(data).find("ROW");
                         // empRowList 확인 row로 된 array
