@@ -1,0 +1,63 @@
+
+.hr{
+    padding: 550px 20px 0px 0px;
+}
+
+.notbody4{
+    padding: 50px 20px 0px 0px;
+
+}
+
+#notbody4H2{
+    font-size: 36px;
+}
+
+#notbody4H3{
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+#notbody4Sub01{
+    float: left;
+    width: 40%;
+}
+
+#notbody4Img{
+    width: 20%;
+    float: right;
+}
+
+#notbodySub02{
+    list-style: none;
+
+    padding: 250px 20px 0px 0px;
+}
+
+#sub02btmP{
+    float: left;
+    width: 15%;
+}
+
+#sub02Btn{
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    line-height: 40px;
+
+}
+
+#sub02Btn:hover{
+    background-color: lightgray;
+}
+
+#sub02p{
+    padding: 230px 20px 0px 0px;
+}
+
+#sub02Img{
+    width: 70%;
+    float: right;
+}

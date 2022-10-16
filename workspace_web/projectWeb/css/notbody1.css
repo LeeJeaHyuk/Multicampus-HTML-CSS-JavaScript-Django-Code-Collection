@@ -1,0 +1,44 @@
+
+.notbody1{
+
+    width: 100%;
+    line-height:25.5px;
+    padding: 50px 0px 0px 0px;
+}
+#notbody1_1{
+    float: left;
+    width: 40%;
+    line-height:  25.5px;
+    vertical-align:    baseline;
+    letter-spacing:    normal;
+    word-spacing:    0px;
+    margin: 0px;
+    padding: 50px 0px 0px 0px;
+}
+
+#notbody1Img{
+    width: 30%;
+    float: left;
+}
+
+#h1{
+    font-size: 53px;
+    line-height : 58px;
+    margin: 0px;
+
+}
+
+#h2{
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing:-0.135px;
+    opacity: 0.6;
+
+}
+
+.logo img{vertical-align:middle;}
+
+#logo{
+
+    margin: -10;
+}

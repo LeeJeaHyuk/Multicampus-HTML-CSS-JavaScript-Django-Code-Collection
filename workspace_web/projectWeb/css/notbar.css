@@ -1,0 +1,66 @@
+#notionWarp{
+    overflow-x: hidden;
+}
+
+
+body{
+    margin: 30px 83.6667px;
+}
+
+a {
+    text-decoration :none;
+    color: black;
+}
+
+.notbar{
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FFFEFC;
+    color: black !important;
+    padding: 0px;
+    line-height:25.5px;
+    vertical-align:baseline;
+    letter-spacing:normal;
+    word-spacing:0px;
+
+}
+
+.notbar_logo{
+    line-height:25.5px;
+    display: contents;
+    font-size: 17px;
+    color: black;
+}
+
+.notbar_menu{
+    
+    font-size: 15px;
+    display: flex;
+    list-style: none;
+}
+
+.notbar_menu2{
+    font-size: 15px;
+    display: flex;
+    list-style: none;
+    float: r;
+}
+
+
+
+.notbar_menu li{
+    padding: 8px 12px;
+}
+
+#notTrial{
+    border: 0;
+    outline: 0;
+    font-size: 13.5px;
+    background-color: #E06259;
+    color: white;
+    padding:7px 13px;
+    border-radius: 5px;
+}
+
