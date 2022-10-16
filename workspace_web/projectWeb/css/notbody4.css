@@ -3,37 +3,63 @@
     padding: 550px 20px 0px 0px;
 }
 
+/* 수평선 */
+
 .notbody4{
     padding: 50px 20px 0px 0px;
 
 }
 
+/*notbody4 : dir 전체 틀  */
+
+
+
+/* 
+notbody4Sub01 위쪽 dir
+
+sub01H : 왼쪽
+
+notbody4Img : 오른쪽
+
+*/
+.notbody4Sub01 div{
+    width: 40%;
+    border:1px solid #f00;
+}
+
+.notbody4Sub01.sub01H{
+    float: left;
+    width: 40%;
+}
 #notbody4H2{
     font-size: 36px;
 }
-
 #notbody4H3{
     font-size: 18px;
     opacity: 0.6;
 }
 
-#notbody4Sub01{
-    float: left;
-    width: 40%;
-}
-
-#notbody4Img{
+.notbody4Sub01.notbody4Img{
     width: 20%;
     float: right;
 }
 
+/* 
+notbodySub02 : 아래쪽 dir
+
+sub02btmP : 왼쪽
+
+
+*/
+
 #notbodySub02{
     list-style: none;
-
+    width: 100%;
     padding: 250px 20px 0px 0px;
 }
 
-#sub02btmP{
+.notbodySub02.sub02btmP{
+    padding: 10px 20px 0px 0px;
     float: left;
     width: 15%;
 }
@@ -57,7 +83,7 @@
     padding: 230px 20px 0px 0px;
 }
 
-#sub02Img{
+.notbodySub02.sub02Img{
     width: 70%;
     float: right;
 }

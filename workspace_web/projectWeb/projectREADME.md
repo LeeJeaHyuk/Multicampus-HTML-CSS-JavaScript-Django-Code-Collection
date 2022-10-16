@@ -1,10 +1,7 @@
 # 웹페이지 따라 만들기 project 
-이재혁
-[notion 페이지 따라 만들기](https://www.notion.so/ko-kr)
-
-## 공부된 것
-1. 
-
+- 이재혁
+- [notion 페이지](https://www.notion.so/ko-kr) 따라 만들기
+- 미완성
 
 ## 문제점
 1. div 안에 div 넣었는데 f12로 설정 구역 보면 상위div는 인식이 안되는데 왜안돼는지 모르겠음
@@ -14,5 +11,5 @@
     - ganada.png
     - meeting.png
 3. div 안에 빈칸을 어떻게 넣는지 모르겠음
-4. 각각 div에 margin을 두어서 옆에 공간을 내었었는데 body에 넣으면 한번에 할 수 있다는 걸 깨닫고
-   body에 넣으려다 전체 다 어그러짐
+4. 각각 div에 margin을 두어서 옆에 공간을 내었었는데 body에     넣으면 한번에 할 수 있다는 걸 깨닫고 body에 넣으려다 전체 다 어그러짐
+5. id와 class를 어느 상황에 써야 할지 모르겠음

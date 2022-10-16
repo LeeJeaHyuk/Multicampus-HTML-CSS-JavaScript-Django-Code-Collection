@@ -13,7 +13,6 @@ a {
 }
 
 .notbar{
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -24,7 +23,6 @@ a {
     vertical-align:baseline;
     letter-spacing:normal;
     word-spacing:0px;
-
 }
 
 .notbar_logo{

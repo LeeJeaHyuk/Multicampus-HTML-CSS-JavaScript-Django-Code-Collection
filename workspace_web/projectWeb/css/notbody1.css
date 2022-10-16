@@ -5,6 +5,7 @@
     line-height:25.5px;
     padding: 50px 0px 0px 0px;
 }
+
 #notbody1_1{
     float: left;
     width: 40%;
@@ -16,9 +17,13 @@
     padding: 50px 0px 0px 0px;
 }
 
+#body1P{
+    font-size: 13.5px;
+}
+
 #notbody1Img{
     width: 30%;
-    float: left;
+    float: right;
 }
 
 #h1{
