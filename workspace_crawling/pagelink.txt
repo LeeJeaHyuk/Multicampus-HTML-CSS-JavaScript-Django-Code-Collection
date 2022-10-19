@@ -1,0 +1,13 @@
+https://www.data.go.kr/tcs/dss/selectDataSetList.do
+?dType=FILE
+&keyword=%EA%B5%90%EC%9C%A1
+&
+recmSe=N
+&
+currentPage=1
+&
+perPage=10
+
+https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=FILE&keyword=%EA%B5%90%EC%9C%A1&recmSe=N&currentPage=1&perPage=10
+
+https://www.data.go.kr/tcs/dss/selectDataSetList.do?dType=FILE&keyword=%EA%B5%90%EC%9C%A1&currentPage=2
