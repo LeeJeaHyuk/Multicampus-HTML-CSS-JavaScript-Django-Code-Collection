@@ -6,7 +6,7 @@ fig = plt.figure()
 # subplot 배치 : 틀 나누기
 ax = fig.subplots()
 
-ax.plot([1,2,3,4,5])
+ax.plot([1,2,3,4,5,6,7])
 
 # 그래프 출력
 plt.show()

@@ -23,10 +23,12 @@ pickup_borough : 승차 도시
 dropoff_borough : 하차 도시
 """
 
+# print(taxis['pickup'])
+# print(type(taxis['pickup'])) #<class 'pandas.core.series.Series'>
 plt.figure(figsize=(15, 10))
 
 
-taxis['ymd'] = list(map(lambda x: x.split()[0], taxis['pickup']))
+taxis['ymd'] = list(map(lambda x: x.split()[0], taxis['pickup'].astype(str)))
 taxis.sort_values(by=['ymd'], ascending=True, inplace=True)
 
 ymd_group = taxis.groupby(['ymd']).sum()

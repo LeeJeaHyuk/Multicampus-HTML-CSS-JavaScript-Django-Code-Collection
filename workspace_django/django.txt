@@ -1,0 +1,33 @@
+
+(myweb) C:\Users\deepBlue\workspaces2210\workspace_django>django-admin startproject mysite
+
+(myweb) C:\Users\deepBlue\workspaces2210\workspace_django>cd mysite                        
+
+(myweb) C:\Users\deepBlue\workspaces2210\workspace_django\mysite>python manage.py runserver
+
+ctrl c : 서버 종료
+
+django-admin startproject hello
+
+hello\hello\views.py
+
+(myweb) C:\Users\deepBlue\workspaces2210\workspace_django\hello>python manage.py runserver 
+
+(myweb) C:\Users\deepBlue\workspaces2210\workspace_django\hello>python manage.py startapp hello01
+hellow01앱 만드어짐
+
+runserver다른 ip로
+python manage.py runserver 0.0.0.0:7000
+python manage.py runserver localhost:7000
+
+정적인 파일이 요청되면  webserver가 
+동적인 파일이 요청되면 web application server
+
+setting.py 사용자가 환경설정하는곳
+
+URLCOnf는 요청이 들어오면 veiw에 매핑해주는데 
+path를 사용한다
+
+1) Hello, Django! 클릭시 return화면 보이게
+2) Return 클릭시 Hello, Django!보이도록
+

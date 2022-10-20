@@ -44,5 +44,5 @@ res_json = json.dumps(res, ensure_ascii=False)
 # print(res_json)
 # ""로 뜨면 json객체임을 확인 가능
 
-with open("webtoons.json", "w", encoding="utf-8") as f:
+with open("../visual/05_wordcloud/webtoons.json", "w", encoding="utf-8") as f:
     f.write(res_json)
